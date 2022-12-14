@@ -18,19 +18,22 @@ var myChart = new Chart(ctx, {
   },
 });
 
+
+// user timings api
 performance.mark("loading-start");
 
-setTimeout(() => {
-  performance.mark("loading-finish");
-}, 1000);
+let i = 5000;
 
-// Measure login duration
+while (i !== 0) {
+  i--;
+}
+
+performance.mark("loading-finish");
+
 const loadingMeasure = performance.measure(
   "loading-time",
   "loading-start",
   "loading-finish"
 );
 
-// Send to analytics endpoint
-// or log to the console
 console.log(loadingMeasure.duration);
